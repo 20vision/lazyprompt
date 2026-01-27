@@ -54,9 +54,32 @@ h1 { margin: 0; font-size: 17px; font-weight: 600; }
 }
 .icon-btn:hover { background: rgba(0, 122, 255, 0.1); }
 
+/* UPDATE THIS BLOCK */
 .text-btn {
-  background: none; border: none; cursor: pointer;
-  color: var(--accent); font-size: 15px; font-weight: 600;
+  background: none; 
+  border: none; 
+  cursor: pointer;
+  color: var(--accent); 
+  font-size: 16px; /* Increased slightly to 16px for better legibility */
+  font-weight: 600; /* Regular weight looks cleaner for text buttons */
+  
+  /* Flexbox magic to align arrow and text perfectly */
+  display: flex; 
+  align-items: center;
+  padding: 0 5px; /* Adds a larger click target */
+  height: 100%;
+}
+
+.text-btn:hover {
+  opacity: 0.7; /* Standard iOS hover effect */
+}
+
+/* ADD THIS NEW BLOCK */
+.back-arrow {
+  font-size: 24px; /* Make the arrow larger than the text */
+  margin-bottom: 3px; /* Optically center the arrow */
+  margin-right: -1px; /* Pull the text closer to the arrow */
+  line-height: 1;
 }
 
 /* SEARCH */
