@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@600;800&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="style.css">
+
+  <style>
+    /* Injected styles to match LazyPrompt Branding */
+    :root {
+      --brand-purple: #9333ea; /* Tailwind purple-600 */
+      --brand-dark: #111827;   /* Tailwind gray-900 */
+    }
+
+    header {
+      /* ensuring the header allows for the new logo flex layout */
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 10px 15px; /* Adjust based on your preference */
+    }
+
+    .brand-container {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      font-family: 'Inter', sans-serif;
+      font-size: 20px;
+      font-weight: 800; /* Extra bold */
+      color: var(--brand-dark);
+      letter-spacing: -0.05em; /* Tighter tracking like the landing page */
+      user-select: none;
+    }
+
+    .brand-logo-img {
+      width: 24px;
+      height: 24px;
+      border-radius: 6px; /* Rounded corners like landing page */
+    }
+
+    .brand-highlight {
+      color: var(--brand-purple);
+    }
+    
+    /* Dark mode support if your system supports it */
+    @media (prefers-color-scheme: dark) {
+      .brand-container { color: #f3f4f6; }
+      .brand-highlight { color: #c084fc; } /* Lighter purple for dark mode */
+    }
+  </style>
+</head>
+<body>
+
+  <div id="view-list" class="view active">
+    <header>
+      <button id="btn-settings" class="icon-btn" title="Settings">⚙️</button>
+      
+      <div class="brand-container">
+        <img src="icons/icon128.png" alt="LP" class="brand-logo-img"> 
+        <span>Lazy<span class="brand-highlight">Prompt</span></span>
+      </div>
+      <button id="btn-add" class="icon-btn" title="Add New">＋</button>
+    </header>
+    
+    <div class="search-container">
+      <input type="text" id="search" placeholder="Search prompts...">
+    </div>
+
+    <ul id="note-list">
+      </ul>
+  </div>
+
+  <div id="view-editor" class="view">
+    <header>
+      <button id="btn-back" class="icon-btn">‹ Back</button>
+      <button id="btn-save" class="text-btn">Done</button>
+    </header>
+    <div class="editor-container">
+      <input type="text" id="editor-title" class="editor-title-input" placeholder="Title">
+      <textarea id="editor-content" placeholder="Type or paste your context here..."></textarea>
+    </div>
+  </div>
+
+  <div id="view-settings" class="view">
+    <header>
+      <button id="btn-settings-back" class="text-btn">Done</button>
+      <h1>Settings</h1>
+      <div style="width: 30px;"></div> 
+    </header>
+    <div class="settings-panel">
+      <div class="toggle-row">
+        <span>Password Protection</span>
+        <input type="checkbox" id="chk-password">
+      </div>
+      <div id="password-setup" style="display:none; margin-top: 10px;">
+        <input type="password" id="set-password" placeholder="Set Password">
+        <p class="hint">Restart browser to lock.</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="view-lock" class="view">
+    <div class="lock-screen">
+      <h2>Locked</h2>
+      <input type="password" id="unlock-password" placeholder="Enter Password">
+      <button id="btn-unlock">Unlock</button>
+      <div id="unlock-error"></div>
+    </div>
+  </div>
+
+  <div id="context-menu" class="context-menu">
+    <button id="menu-edit">Edit</button>
+    <button id="menu-duplicate">Duplicate</button>
+    <div class="divider"></div>
+    <button id="menu-delete" class="delete">Delete</button>
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>
