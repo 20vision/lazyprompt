@@ -144,3 +144,9 @@ Distributed under the MIT License. See `LICENSE` for more information.
 <p align="center">
   Built with ❤️ by <a href="https://20.vision">20Vision GmbH</a>. Vienna, Austria.
 </p>
+
+## Related
+
+- [20Vision page for this project](https://20.vision/lazyprompt?utm_source=github&utm_medium=probe&utm_campaign=lazyprompt)
+- [myclawn-mcp](https://github.com/20vision/myclawn-mcp): MCP server and plugin
+- [skills](https://github.com/20vision/skills): agent skills by 20Vision
